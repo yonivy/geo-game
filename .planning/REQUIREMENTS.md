@@ -58,26 +58,26 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GAME-01 | TBD | Pending |
-| GAME-02 | TBD | Pending |
-| GAME-03 | TBD | Pending |
-| GAME-04 | TBD | Pending |
-| GAME-05 | TBD | Pending |
-| GAME-06 | TBD | Pending |
-| GAME-07 | TBD | Pending |
-| GAME-08 | TBD | Pending |
-| GAME-09 | TBD | Pending |
-| DATA-01 | TBD | Pending |
-| DATA-02 | TBD | Pending |
-| UI-01 | TBD | Pending |
-| UI-02 | TBD | Pending |
-| UI-03 | TBD | Pending |
-| UI-04 | TBD | Pending |
+| GAME-01 | Phase 1 | Pending |
+| GAME-02 | Phase 2 | Pending |
+| GAME-03 | Phase 2 | Pending |
+| GAME-04 | Phase 1 | Pending |
+| GAME-05 | Phase 1 | Pending |
+| GAME-06 | Phase 1 | Pending |
+| GAME-07 | Phase 1 | Pending |
+| GAME-08 | Phase 1 | Pending |
+| GAME-09 | Phase 2/3 | Pending |
+| DATA-01 | Phase 1 | Pending |
+| DATA-02 | Phase 1 | Pending |
+| UI-01 | Phase 2 | Pending |
+| UI-02 | Phase 2 | Pending |
+| UI-03 | Phase 3 | Pending |
+| UI-04 | Phase 2 | Pending |
 
 **Coverage:**
 - v1 requirements: 15 total
-- Mapped to phases: 0
-- Unmapped: 15 ⚠️
+- Mapped to phases: 15
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-26*
