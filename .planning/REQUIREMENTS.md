@@ -58,17 +58,17 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GAME-01 | Phase 1 | Pending |
+| GAME-01 | Phase 1 | Complete |
 | GAME-02 | Phase 2 | Pending |
 | GAME-03 | Phase 2 | Pending |
-| GAME-04 | Phase 1 | Pending |
-| GAME-05 | Phase 1 | Pending |
-| GAME-06 | Phase 1 | Pending |
-| GAME-07 | Phase 1 | Pending |
-| GAME-08 | Phase 1 | Pending |
+| GAME-04 | Phase 1 | Complete |
+| GAME-05 | Phase 1 | Complete |
+| GAME-06 | Phase 1 | Complete |
+| GAME-07 | Phase 1 | Complete |
+| GAME-08 | Phase 1 | Complete |
 | GAME-09 | Phase 2/3 | Pending |
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
 | UI-01 | Phase 2 | Pending |
 | UI-02 | Phase 2 | Pending |
 | UI-03 | Phase 3 | Pending |

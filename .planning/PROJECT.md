@@ -16,17 +16,17 @@ The game must feel fast, fair, and polished — tap from one question to the nex
 
 ### Active
 
-- [ ] **GAME-01**: Player sees 90s countdown timer on game start
+- [x] **GAME-01**: Player sees 90s countdown timer on game start
 - [ ] **GAME-02**: Player is shown a flag image with 4 country-name options
 - [ ] **GAME-03**: Player taps/clicks an answer with instant correct/incorrect feedback
-- [ ] **GAME-04**: Correct answer increments streak counter; streak acts as score multiplier
-- [ ] **GAME-05**: Incorrect answer resets streak to 0
-- [ ] **GAME-06**: Game progresses to next question regardless of correctness
-- [ ] **GAME-07**: Game ends when timer reaches 0
-- [ ] **GAME-08**: Final score displayed on end screen
+- [x] **GAME-04**: Correct answer increments streak counter; streak acts as score multiplier
+- [x] **GAME-05**: Incorrect answer resets streak to 0
+- [x] **GAME-06**: Game progresses to next question regardless of correctness
+- [x] **GAME-07**: Game ends when timer reaches 0
+- [x] **GAME-08**: Final score displayed on end screen
 - [ ] **GAME-09**: Player can share score via native Web Share API
-- [ ] **DATA-01**: ~195 UN country flags bundled as SVG assets
-- [ ] **DATA-02**: Country metadata (name, flag path) in a local data file
+- [x] **DATA-01**: ~195 UN country flags bundled as SVG assets
+- [x] **DATA-02**: Country metadata (name, flag path) in a local data file
 - [ ] **UI-01**: Clean, professional design — polished controls, smooth transitions
 - [ ] **UI-02**: Mobile-first responsive layout
 - [ ] **UI-03**: PWA manifest + service worker for installability and offline play
