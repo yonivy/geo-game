@@ -59,8 +59,8 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | GAME-01 | Phase 1 | Complete |
-| GAME-02 | Phase 2 | Pending |
-| GAME-03 | Phase 2 | Pending |
+| GAME-02 | Phase 2 | Complete |
+| GAME-03 | Phase 2 | Complete |
 | GAME-04 | Phase 1 | Complete |
 | GAME-05 | Phase 1 | Complete |
 | GAME-06 | Phase 1 | Complete |
@@ -69,10 +69,10 @@
 | GAME-09 | Phase 2/3 | Pending |
 | DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Complete |
-| UI-01 | Phase 2 | Pending |
-| UI-02 | Phase 2 | Pending |
+| UI-01 | Phase 2 | Complete |
+| UI-02 | Phase 2 | Complete |
 | UI-03 | Phase 3 | Pending |
-| UI-04 | Phase 2 | Pending |
+| UI-04 | Phase 2 | Complete |
 
 **Coverage:**
 - v1 requirements: 15 total

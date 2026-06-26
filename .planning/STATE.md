@@ -16,12 +16,12 @@ See: .planning/PROJECT.md (updated 2026-06-26)
 | Phase | Name | Status | Plans | Tasks |
 |-------|------|--------|-------|-------|
 | 1 | Data + Core Engine | Complete | 1/1 | 8/8 |
-| 2 | Game UI | Ready | 0/0 | 0/0 |
-| 3 | PWA + Polish | Not started | 0/0 | 0/0 |
+| 2 | Game UI | Complete | 1/1 | 7/7 |
+| 3 | PWA + Polish | Ready | 0/0 | 0/0 |
 
 ## Current Phase
 
-- **Phase:** 2
-- **Name:** Game UI
+- **Phase:** 3
+- **Name:** PWA + Polish
 - **Status:** Ready
 - **Plan:** None yet
