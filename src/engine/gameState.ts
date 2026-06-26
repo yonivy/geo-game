@@ -15,6 +15,7 @@ export interface GameStateCallbacks {
 export interface GameStateController {
   startGame: () => void
   submitAnswer: (countryCode: string) => void
+  quit: () => void
   getStatus: () => GameStatus
   getScore: () => number
   getStreak: () => number
@@ -88,11 +89,16 @@ export function createGameState(callbacks: GameStateCallbacks): GameStateControl
     }
   }
 
+  function quit() {
+    timer.stop()
+    status = "idle"
+  }
+
   function getStatus() { return status }
   function getScore() { return score }
   function getStreak() { return streak }
   function getCurrentQuestion() { return currentQuestion }
   function getAnswerHistory() { return [...answerHistory] }
 
-  return { startGame, submitAnswer, getStatus, getScore, getStreak, getCurrentQuestion, getAnswerHistory }
+  return { startGame, submitAnswer, quit, getStatus, getScore, getStreak, getCurrentQuestion, getAnswerHistory }
 }

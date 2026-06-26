@@ -13,6 +13,7 @@ interface Props {
   feedback: "correct" | "incorrect" | null
   selectedCode: string | null
   onSubmit: (code: string) => void
+  onQuit: () => void
 }
 
 export function GameScreen({
@@ -25,6 +26,7 @@ export function GameScreen({
   feedback,
   selectedCode,
   onSubmit,
+  onQuit,
 }: Props) {
   const [entered, setEntered] = useState(false)
 
@@ -138,6 +140,26 @@ export function GameScreen({
         <FlagImage countryCode={question.correct.code} countryName={question.correct.name} />
       </div>
 
+      {feedback && (
+        <div
+          style={{
+            padding: "10px 16px",
+            borderRadius: 10,
+            marginBottom: 12,
+            fontSize: 15,
+            fontWeight: 600,
+            textAlign: "center",
+            background: feedback === "correct" ? "#dcfce7" : "#fef2f2",
+            color: feedback === "correct" ? "#166534" : "#991b1b",
+            animation: "fadeIn 0.2s ease",
+          }}
+        >
+          {feedback === "correct"
+            ? "Correct!"
+            : `Wrong — it was ${question.correct.name}`}
+        </div>
+      )}
+
       <div
         style={{
           display: "flex",
@@ -175,12 +197,34 @@ export function GameScreen({
 
       <div
         style={{
-          textAlign: "center",
-          fontSize: 13,
-          color: "#a1a1aa",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        {correctCount}/{totalAnswered} correct
+        <div
+          style={{
+            fontSize: 13,
+            color: "#a1a1aa",
+          }}
+        >
+          {correctCount}/{totalAnswered} correct
+        </div>
+        <button
+          onClick={onQuit}
+          style={{
+            padding: "6px 16px",
+            fontSize: 13,
+            fontWeight: 500,
+            border: "1px solid #e4e4e7",
+            borderRadius: 8,
+            background: "#fff",
+            color: "#71717a",
+            cursor: "pointer",
+          }}
+        >
+          Quit
+        </button>
       </div>
     </div>
   )

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
+import { loadScores } from "../utils/scoreHistory"
 
 interface Props {
   onStart: () => void
+  onHistory: () => void
 }
 
-export function MenuScreen({ onStart }: Props) {
+export function MenuScreen({ onStart, onHistory }: Props) {
   const [visible, setVisible] = useState(false)
+  const hasHistory = loadScores().length > 0
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 50)
@@ -68,31 +71,66 @@ export function MenuScreen({ onStart }: Props) {
         Identify the flag. Build your streak. Beat the clock.
       </p>
 
-      <button
-        onClick={onStart}
+      <div
         style={{
-          padding: "16px 56px",
-          fontSize: 17,
-          fontWeight: 600,
-          border: "none",
-          borderRadius: 14,
-          background: "linear-gradient(135deg, #2563eb, #3b82f6)",
-          color: "#fff",
-          cursor: "pointer",
-          boxShadow: "0 4px 14px rgba(37,99,235,0.3)",
-          transition: "transform 0.15s, box-shadow 0.15s",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.03)"
-          e.currentTarget.style.boxShadow = "0 6px 20px rgba(37,99,235,0.4)"
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "scale(1)"
-          e.currentTarget.style.boxShadow = "0 4px 14px rgba(37,99,235,0.3)"
+          display: "flex",
+          flexDirection: "column",
+          gap: 10,
+          width: "100%",
+          maxWidth: 280,
         }}
       >
-        Start Game
-      </button>
+        <button
+          onClick={onStart}
+          style={{
+            padding: "16px 56px",
+            fontSize: 17,
+            fontWeight: 600,
+            border: "none",
+            borderRadius: 14,
+            background: "linear-gradient(135deg, #2563eb, #3b82f6)",
+            color: "#fff",
+            cursor: "pointer",
+            boxShadow: "0 4px 14px rgba(37,99,235,0.3)",
+            transition: "transform 0.15s, box-shadow 0.15s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "scale(1.03)"
+            e.currentTarget.style.boxShadow = "0 6px 20px rgba(37,99,235,0.4)"
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "scale(1)"
+            e.currentTarget.style.boxShadow = "0 4px 14px rgba(37,99,235,0.3)"
+          }}
+        >
+          Start Game
+        </button>
+
+        {hasHistory && (
+          <button
+            onClick={onHistory}
+            style={{
+              padding: "14px 48px",
+              fontSize: 15,
+              fontWeight: 500,
+              border: "2px solid #e4e4e7",
+              borderRadius: 14,
+              background: "#fff",
+              color: "#18181b",
+              cursor: "pointer",
+              transition: "border-color 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#2563eb"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "#e4e4e7"
+            }}
+          >
+            Past Results
+          </button>
+        )}
+      </div>
     </div>
   )
 }

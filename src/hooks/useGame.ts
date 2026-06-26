@@ -1,8 +1,9 @@
 import { useState, useRef, useCallback } from "react"
 import type { Question } from "../types"
 import { createGameState, type GameStateController } from "../engine/gameState"
+import { saveScore } from "../utils/scoreHistory"
 
-export type GamePhase = "menu" | "playing" | "result"
+export type GamePhase = "menu" | "playing" | "result" | "history"
 
 export interface GameUIState {
   phase: GamePhase
@@ -33,6 +34,7 @@ const initialState: GameUIState = {
 export function useGame() {
   const [state, setState] = useState<GameUIState>(initialState)
   const gameRef = useRef<GameStateController | null>(null)
+  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   function startGame() {
     gameRef.current = createGameState({
@@ -40,16 +42,29 @@ export function useGame() {
         setState((s) => ({ ...s, timeDisplay: display }))
       },
       onTimerFinish: () => {
+        const finalScore = gameRef.current?.getScore() ?? 0
+        const history = gameRef.current?.getAnswerHistory() ?? []
+        const correct = history.filter((a) => a.correct).length
+        saveScore({
+          date: new Date().toISOString(),
+          score: finalScore,
+          correctCount: correct,
+          totalAnswered: history.length,
+          accuracy: history.length > 0 ? Math.round((correct / history.length) * 100) : 0,
+        })
         setState((s) => ({
           ...s,
           phase: "result",
-          finalScore: gameRef.current?.getScore() ?? s.score,
+          finalScore,
         }))
       },
       onNewQuestion: (q) => {
-        setState((s) => ({ ...s, currentQuestion: q, feedback: null, selectedCode: null }))
+        feedbackTimerRef.current = setTimeout(() => {
+          setState((s) => ({ ...s, currentQuestion: q, feedback: null, selectedCode: null }))
+        }, 700)
       },
       onAnswerResult: (correct, streak, _pointsEarned) => {
+        if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current)
         setState((s) => ({
           ...s,
           streak,
@@ -81,7 +96,26 @@ export function useGame() {
     gameRef.current?.submitAnswer(code)
   }, [])
 
-  function resetGame() {
+  function quitGame() {
+    if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current)
+    gameRef.current?.quit()
+    setState(initialState)
+  }
+
+  function finishGame() {
+    const fScore = gameRef.current?.getScore() ?? 0
+    setState((s) => ({
+      ...s,
+      phase: "result",
+      finalScore: fScore,
+    }))
+  }
+
+  function showHistory() {
+    setState((s) => ({ ...s, phase: "history" }))
+  }
+
+  function goToMenu() {
     setState(initialState)
   }
 
@@ -89,6 +123,9 @@ export function useGame() {
     ...state,
     startGame,
     submitAnswer,
-    resetGame,
+    quitGame,
+    finishGame,
+    showHistory,
+    goToMenu,
   }
 }
