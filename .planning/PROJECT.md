@@ -24,12 +24,12 @@ The game must feel fast, fair, and polished — tap from one question to the nex
 - [x] **GAME-06**: Game progresses to next question regardless of correctness
 - [x] **GAME-07**: Game ends when timer reaches 0
 - [x] **GAME-08**: Final score displayed on end screen
-- [ ] **GAME-09**: Player can share score via native Web Share API
+- [x] **GAME-09**: Player can share score via native Web Share API
 - [x] **DATA-01**: ~195 UN country flags bundled as SVG assets
 - [x] **DATA-02**: Country metadata (name, flag path) in a local data file
 - [x] **UI-01**: Clean, professional design — polished controls, smooth transitions
 - [x] **UI-02**: Mobile-first responsive layout
-- [ ] **UI-03**: PWA manifest + service worker for installability and offline play
+- [x] **UI-03**: PWA manifest + service worker for installability and offline play
 
 ### Out of Scope
 

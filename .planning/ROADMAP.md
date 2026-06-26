@@ -70,12 +70,12 @@
 | GAME-06 | Phase 1 | Complete |
 | GAME-07 | Phase 1 | Complete |
 | GAME-08 | Phase 1 | Complete |
-| GAME-09 | Phase 2/3 | Pending |
+| GAME-09 | Phase 2/3 | Complete |
 | DATA-01 | Phase 1 | Complete |
 | DATA-02 | Phase 1 | Complete |
 | UI-01 | Phase 2 | Complete |
 | UI-02 | Phase 2 | Complete |
-| UI-03 | Phase 3 | Pending |
+| UI-03 | Phase 3 | Complete |
 | UI-04 | Phase 2 | Complete |
 
 **Coverage:**
