@@ -45,7 +45,7 @@ export function FlagImage({ countryCode, countryName }: Props) {
         />
       )}
       <img
-        src={`/flags/${countryCode}.svg`}
+        src={`${import.meta.env.BASE_URL}flags/${countryCode}.svg`}
         alt={`Flag of ${countryName}`}
         onLoad={() => setLoaded(true)}
         onError={() => setErrored(true)}
