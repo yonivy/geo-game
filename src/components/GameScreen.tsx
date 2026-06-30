@@ -52,12 +52,23 @@ export function GameScreen({
       color: "#18181b",
     }
 
-    if (feedback && code === question.correct.code) {
-      return { ...base, background: "#dcfce7", borderColor: "#22c55e", color: "#166534" }
+    if (feedback && code === selectedCode) {
+      const isCorrect = code === question.correct.code
+      return {
+        ...base,
+        background: isCorrect ? "#dcfce7" : "#fef2f2",
+        borderColor: isCorrect ? "#22c55e" : "#ef4444",
+        color: isCorrect ? "#166534" : "#991b1b",
+      }
     }
 
-    if (feedback && code === selectedCode && code !== question.correct.code) {
-      return { ...base, background: "#fef2f2", borderColor: "#ef4444", color: "#991b1b" }
+    if (feedback && code === question.correct.code) {
+      return {
+        ...base,
+        background: "#dcfce7",
+        borderColor: "#22c55e",
+        color: "#166534",
+      }
     }
 
     if (!feedback) {
@@ -139,26 +150,6 @@ export function GameScreen({
       >
         <FlagImage countryCode={question.correct.code} countryName={question.correct.name} />
       </div>
-
-      {feedback && (
-        <div
-          style={{
-            padding: "10px 16px",
-            borderRadius: 10,
-            marginBottom: 12,
-            fontSize: 15,
-            fontWeight: 600,
-            textAlign: "center",
-            background: feedback === "correct" ? "#dcfce7" : "#fef2f2",
-            color: feedback === "correct" ? "#166534" : "#991b1b",
-            animation: "fadeIn 0.2s ease",
-          }}
-        >
-          {feedback === "correct"
-            ? "Correct!"
-            : `Wrong — it was ${question.correct.name}`}
-        </div>
-      )}
 
       <div
         style={{
